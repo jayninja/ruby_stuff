@@ -21,22 +21,21 @@ opt = GetoptLong.new(
     ['--host', '-i', GetoptLong::REQUIRED_ARGUMENT],
     ['--low', '-l', GetoptLong::REQUIRED_ARGUMENT],
     ['--high', '-h', GetoptLong::REQUIRED_ARGUMENT],
-    ['--verbose',    '-v', GetoptLong::NO_ARGUMENT])
+    ['--verbose', '-v', GetoptLong::NO_ARGUMENT])
 
 opt.each_option do |name,arg|
    case name
      when '--verbose'
-        printf "verbose!\n", arg unless $verbose == false
         $verbose = true 
      when '--host'
-       printf "host is %s\n", arg unless $verbose == false
-       host = arg
+        host = arg
+        puts "host: #{host}" unless $verbose == false
      when '--low'
-        printf "low port %s\n", arg unless $verbose == false
         low_port = arg
+        puts "low port: #{low_port}" unless $verbose == false
      when '--high'
-        printf "high port %s\n", arg unless $verbose == false
         high_port = arg    
+        puts "high port: #{high_port}" unless $verbose == false
    end
 end
 
