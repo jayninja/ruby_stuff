@@ -21,10 +21,15 @@ opt = GetoptLong.new(
     ['--host', '-i', GetoptLong::REQUIRED_ARGUMENT],
     ['--low', '-l', GetoptLong::REQUIRED_ARGUMENT],
     ['--high', '-h', GetoptLong::REQUIRED_ARGUMENT],
-    ['--verbose', '-v', GetoptLong::NO_ARGUMENT])
+    ['--verbose', '-v', GetoptLong::NO_ARGUMENT],
+    ['--help', GetoptLong::NO_ARGUMENT])
 
 opt.each_option do |name,arg|
    case name
+     when '--help'
+        puts "usage: pscan.rb --host <ip> --low <start_port> --high <end_port>"
+        puts "       pscan.rb --host 123.123.123.123 -l 1 -h 1024"
+        exit
      when '--verbose'
         $verbose = true 
      when '--host'
