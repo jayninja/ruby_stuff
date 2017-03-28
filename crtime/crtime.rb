@@ -4,7 +4,7 @@ require 'open3'
 
 if ARGV.empty? then
   puts "usage: crtime /path/to/file.log"
-  exit 1
+  exit 0
 end
 
 file = ARGV[0]
