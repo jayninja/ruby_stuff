@@ -17,12 +17,12 @@ A script to tell you creation time of a file
 %setup -q -n crtime
 
 %install
-mkdir -p $RPM_BUILD_ROOT/usr/bin
-cp crtime.rb $RPM_BUILD_ROOT/usr/bin/crtime
+mkdir -p $RPM_BUILD_ROOT/usr/sbin
+cp crtime.rb $RPM_BUILD_ROOT/usr/sbin/crtime
 
 
 %files
-/usr/bin/crtime
+/usr/sbin/crtime
 
 
 %changelog
