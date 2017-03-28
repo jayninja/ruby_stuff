@@ -2,6 +2,11 @@
 
 require 'open3'
 
+if ARGV.empty? then
+  puts "usage: crtime /path/to/file.log"
+  exit 1
+end
+
 file = ARGV[0]
 
 ## I know, but how the hell else am i supposed to do it?
