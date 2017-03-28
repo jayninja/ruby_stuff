@@ -20,9 +20,12 @@ stdout, stderr, status = Open3.capture3("debugfs -R 'stat <#{file_inode}>' #{par
 # split it by new lines 
 result_split = stdout.split("\n")
 
-# go through each line and find the one with crtime
+# go through each line and find the one with crtime. Then make it pretty.
 result_split.each { |local_result|
 if ( local_result =~ /crtime(.*)/ )
-  puts local_result
-  end
+  #"crtime: 0x58d46f77:c0a4685c -- Thu Mar 23 19:59:35 2017"
+  local_split = local_result.split("--")
+  date = local_split[1]
+  puts "crtime: #{file} --#{date}"
+end
 }
