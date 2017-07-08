@@ -1,5 +1,5 @@
 # ruby stuff
-stuff im doing to get better at ruby
+Various tools written in native ruby. Some useful, some just for funsies. 
 
 
 
