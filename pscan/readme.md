@@ -1,5 +1,5 @@
 ## rough attempt at a port scanner
-bin/pscan.rb -- port scanner
+bin/pscan.rb -- port scanner  
 rpm/pscan.spec -- spec file to build this project into an rpm.
 
 Todo: 
